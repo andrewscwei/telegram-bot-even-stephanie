@@ -14,7 +14,7 @@ def show(update: Update, context: CallbackContext):
     reply = 'Nothing to show 🫠'
   else:
     total = sum(expense.amount for expense in expenses)
-    reply = f'Total expenses at `{format_currency(total)}`, breakdown 👇'
+    reply = f'The current total is at `{format_currency(total)}`, here\'s the breakdown! 👇'
     reply += '\n\n'
     reply += format_expenses(expenses)
 

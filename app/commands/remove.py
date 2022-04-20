@@ -13,7 +13,7 @@ def remove(update: Update, context: CallbackContext):
   try:
     idx = parse_int(context.args[0])
   except Exception as exc:
-    raise Exception('🫠 Oops! Looks like you didn\'t provide a valid expense ID (example: `/remove <expense_id>`)') from exc
+    raise Exception('🫢 Oops! Looks like you didn\'t provide a valid expense ID (example: `/remove <expense_id>`)') from exc
 
   expenses = Expense.query.filter_by(chat_id=chat_id)
   num_expenses = expenses.count()
@@ -28,7 +28,7 @@ def remove(update: Update, context: CallbackContext):
   reply = ''
 
   if expense.user_id == user_id:
-    reply = f'👌 Removed expense for {expense.user_alias} {format_currency(expense.amount)}'
+    reply = f'🙂 Sure! Removed expense for {expense.user_alias} {format_currency(expense.amount)}'
 
     if expense.label.strip():
       reply += f': {expense.label}'

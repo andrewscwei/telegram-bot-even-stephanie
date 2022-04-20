@@ -17,7 +17,7 @@ def balances(update: Update, context: CallbackContext):
   elif is_even_stephanie(balances_by_user):
     reply = 'No one owes anyone anything, even-stephanie! 🥳'
   else:
-    reply += 'Outstanding balances 👇'
+    reply += 'Here\'re the outstanding balances! 👇'
     reply += '\n\n'
     reply += format_balances(balances_by_user)
 

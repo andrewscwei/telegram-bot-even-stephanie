@@ -15,7 +15,7 @@ def add(update: Update, context: CallbackContext):
   try:
     amount = parse_float(context.args[0])
   except Exception as exc:
-    raise Exception('💩 Looks like you didn\'t provide a valid amount (example: `/add 99.99 <optional_label>`)') from exc
+    raise Exception('🫢 Oops! Looks like you didn\'t provide a valid amount (example: `/add 99.99 <optional_label>`)') from exc
 
   label = ' '.join(context.args[1:])
   expense = Expense(chat_id=chat_id, user_id=user_id, user_alias=user_alias, amount=amount, label=label)
@@ -27,7 +27,7 @@ def add(update: Update, context: CallbackContext):
     db.session.rollback()
     raise exc
 
-  reply = f'👌 Added `{format_currency(amount)}` for {user_alias}'
+  reply = f'🙂 Sure! Added `{format_currency(amount)}` for {user_alias}'
 
   if label.strip():
     reply += f': {label}'

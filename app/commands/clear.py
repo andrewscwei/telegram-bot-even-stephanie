@@ -39,7 +39,7 @@ def clear_query_yes(query: CallbackQuery, context: CallbackContext):
       db.session.rollback()
       raise exc
 
-    reply = f'👌 All expenses are cleared by {user_alias}, here\'re the last outstanding balances 👇'
+    reply = f'🙂 All expenses are cleared by {user_alias}, here\'re the last outstanding balances 👇'
     reply += '\n\n'
 
     if is_even_stephanie(balances_by_user):
@@ -54,4 +54,4 @@ def clear_query_yes(query: CallbackQuery, context: CallbackContext):
 
 def clear_query_no(query: CallbackQuery, context: CallbackContext):
   user_alias = parse_user_alias(query.from_user)
-  query.edit_message_text(text=f'👌 Clear command cancelled by {user_alias}')
+  query.edit_message_text(text=f'🙂 Clear command cancelled by {user_alias}')
